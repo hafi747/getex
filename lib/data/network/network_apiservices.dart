@@ -32,7 +32,9 @@ class NetworkApiservices extends BaseApiServices {
           .timeout(Duration(seconds: 10));
       responceJason = returnResponce(responce);
     } on SocketException {
-      throw InternetException("No Internet Connection! Try again.");
+      throw InternetException(
+        "No Internet Connection! Try again. Team will contact you soon.",
+      );
     } on FetchDataException {
       throw InternetException("error occurred during communication");
     }
